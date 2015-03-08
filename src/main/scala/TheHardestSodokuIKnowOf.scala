@@ -36,8 +36,8 @@ object TheHardestSodokuIKnowOf extends App {
   
   val hardest =
     for {
-      x <- 0 to 9
-      y <- 0 to 9
+      x <- 0 to 8
+      y <- 0 to 8
     } yield hardestSodokuEver.getOrElse((x, y), 0)
 
 
