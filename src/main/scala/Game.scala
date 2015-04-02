@@ -1,4 +1,6 @@
 class Game(values: Seq[Int]) {
+  assert(values.length == 81)
+
   def solveSudoku(): Unit = {
     val initValues = values.map(x => fixZero(x))
     val board = Board.apply(initValues)
@@ -14,7 +16,7 @@ class Game(values: Seq[Int]) {
       case Some(b) if b.areWeDone => board
       case Some(b) => b.bestSuggestions.head match {
         case (field, Nil) => None
-        case (field, suggestions) => tryOutANumber(field, suggestions, b)ˇ
+        case (field, suggestions) => tryOutANumber(field, suggestions, b)
       }
     }
   }
